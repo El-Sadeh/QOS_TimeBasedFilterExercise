@@ -60,6 +60,7 @@ void subscriber_main(int domain_id, int sample_count)
 
        	
         rti::util::sleep(dds::core::Duration(10));
+		//GS - this flow will happend  every 10 sec. Why?
 		std::cout << "Changing Time Based Filter in real time:" << std::endl;
 		//Save the current qos data reder to menipulate.
 		//NOTE: we could avoid that part and change everything directly. just for readability
@@ -67,6 +68,7 @@ void subscriber_main(int domain_id, int sample_count)
 		//Need to access the native struct of the time based filter: 
 		oldQOS->time_based_filter->native().minimum_separation.sec = 0.5;
 
+		//GS - Did you check that it actually work?
 
     }
 
