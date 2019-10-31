@@ -66,7 +66,9 @@ void subscriber_main(int domain_id, int sample_count)
 		//NOTE: we could avoid that part and change everything directly. just for readability
 		dds::sub::qos::DataReaderQos oldQOS = reader->qos();
 		//Need to access the native struct of the time based filter: 
-		oldQOS->time_based_filter->native().minimum_separation.sec = 0.5;
+		oldQOS->time_based_filter->native().minimum_separation.nanosec = 500000000;
+		//Now set the QOS
+		reader->qos(oldQOS);
 
 		//GS - Did you check that it actually work?
 

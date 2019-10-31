@@ -99,7 +99,7 @@ RTI Connext user manual.
               <time_based_filter>
                 <minimum_separation>
                   <!-- 5 Hz is 200,000,000 nano: -->
-                  <nanosec>200000000</nanosec>
+                  <nanosec>100000000</nanosec>
                 </minimum_separation>
               </time_based_filter>
             </datareader_qos>
